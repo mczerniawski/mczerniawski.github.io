@@ -110,7 +110,7 @@ author:
   avatar           : # "/assets/images/aboutme/Mateusz.jpg"
   bio              : "A PowerShell Knight Journey."
   location         : "Poland"
-  email            : mczerniawskI@arcon.net.pl 
+  email            : # mczerniawski@arcon.net.pl 
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
