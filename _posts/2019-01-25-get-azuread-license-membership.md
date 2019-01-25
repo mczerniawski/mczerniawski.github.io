@@ -30,7 +30,7 @@ It shouldn't be hard to get all members of Microsoft Flow Free, right? Or Office
 
 In Intune you can easily export all devices into csv and then do whatever you wish with it. When it comes to licenses - you get first 20 people with `Load more` option in GUI. And then you click and click and click to get all 181 users. Then you can hit `ctrl + A` and `ctrl + c` and parse it. 
 
-![Load More](../assets/images/posts/get-azuread-license/picture2.png)
+![Load More](/assets/images/posts/get-azuread-license/picture2.png)
 
 Want to try with PowerShell? Well, it *isn't hard* to get a SINGLE user membership. 
 
