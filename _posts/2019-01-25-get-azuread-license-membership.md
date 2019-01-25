@@ -9,7 +9,6 @@ tags:
     - PowerShell
     - AzureAD
     - Office365
-toc: true
 ---
 
 # The Story
