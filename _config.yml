@@ -291,7 +291,7 @@ defaults:
     values:
       layout: single
       classes: wide
-      author_profile: true
+      author_profile: false
       read_time: true
       comments: # true
       share: true
@@ -303,4 +303,4 @@ defaults:
     values:
       layout: single
       classes: wide
-      author_profile: true
+      author_profile: false
