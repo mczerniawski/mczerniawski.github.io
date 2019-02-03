@@ -1,5 +1,5 @@
 ---
-title: Remove AAD Group Membership of disabled on-premises AD users
+title: Remove AAD Group Membership from disabled on-premises AD users
 categories:
     - PowerShell
     - AzureAD
