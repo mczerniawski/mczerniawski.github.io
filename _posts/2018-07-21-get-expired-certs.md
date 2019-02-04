@@ -20,6 +20,6 @@ This will give me a list with all computer names where the cert is imported. The
 
 I thought I'll get all expired certs from the servers and export them into a list:
 
-{% gist bc9801b831c9f3eea1cdbf5a9d642129 }
+{% gist bc9801b831c9f3eea1cdbf5a9d642129 % }
 
 ![Everyone](/assets/images/posts/expired-certs/picture1.jpg)
