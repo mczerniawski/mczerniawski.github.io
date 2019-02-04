@@ -13,7 +13,7 @@ tags:
 
 # The Problem
 
-So here's the problem - when an employee leaves our company we cannot delete his/hers user account. Instead we disable it. This is mainly cause of how Jira works. During off-boarding process we get the  the user belongs to, store that within our process, remove all membership (except of Jira primary group), disable the user account, move it to proper OU and change the password to a random one.
+So here's the problem - when an employee leaves our company we cannot delete his/her user account. Instead we disable it. This is mainly cause of how Jira works. During off-boarding process we get the group the user belongs to, store that within our process, remove all membership (except of Jira primary group), disable the user account, move it to proper OU and change the password to a random one.
 
 This was all fine till we realized that apart from on-premises groups user also belongs to a number of AzureAD groups - mainly cause of Outlook groups and MS Teams groups created in AzureAD. 
 
