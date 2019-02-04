@@ -1,5 +1,5 @@
 ---
-title: User Security Context Aaccumulated Too Many Security IDs
+title: User Security Context Accumulated Too Many Security IDs
 categories:
     - PowerShell
     - Office365
