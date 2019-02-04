@@ -32,7 +32,7 @@ After a few minutes I've got a working function that:
 
 ## Here's the code:
 
-{ % gist 7f4cfb5123cb9e90f51e1d4dd7addd0b %}
+{% gist 7f4cfb5123cb9e90f51e1d4dd7addd0b %}
 
 And here's the output:
 - Local run:
