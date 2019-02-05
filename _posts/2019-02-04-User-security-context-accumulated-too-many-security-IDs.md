@@ -8,6 +8,7 @@ tags:
     - PowerShell
     - Security Groups
     - ActiveDirectory
+last_modified_at: 2019-02-05T12:00:00+01:00
 ---
 
 # The Story
@@ -111,3 +112,12 @@ Now that's something I can work with:
 ![Oh sh!](/assets/images/posts/user-security-context/picture3.png)
 
 It's gonna be a busy day! :smile:
+
+
+# Update
+
+We decided to get a `visual` overview of what's going on where in our infrastructure.  I was going to use [BloodHound](https://github.com/BloodHoundAD/BloodHound/wiki/Getting-started) for this or write my own GraphViz implementation, but my colleague found a [great script](https://gallery.technet.microsoft.com/scriptcenter/Graph-Nested-AD-Security-eaa01644) from [Axel Limousin](https://social.technet.microsoft.com/profile/axel%20limousin%20-%20itsi).
+
+The usage is quite simple and everything is documented by Axel.
+
+Another benefit of this is that we were able to found some nesting potential issues.
