@@ -13,7 +13,7 @@ tags:
 
 Today was a happy day. One of my co-workers asked me if I can help him with a little PowerShell. I never say 'no' to this. 
 
-<![Panda] ({{ site.url }}{{ site.baseurl }}/assets/images/posts/remote-get-counter/picture1.jpg) 
+<![Panda]({{ site.url }}{{ site.baseurl }}/assets/images/posts/remote-get-counter/picture1.jpg) 
 
 # The Story
 
@@ -25,9 +25,9 @@ He wanted to generate counters on the endpoint, get the results through Invoke-C
 
 ![Error1]({{ site.url }}{{ site.baseurl }}/assets/images/posts/remote-get-counter/picture2.png)
 
-![Fixed]({{ site.url }}{{ site.baseurl }}/assets/images/posts/remote-get-counter/picture3.png)
-
 The issue here is, that data returned through Invoke-Command is deserialized, which is not the original `object`:
+
+![Fixed]({{ site.url }}{{ site.baseurl }}/assets/images/posts/remote-get-counter/picture3.png)
 
 So, I came up with a little bit different idea:
 1. Create a number of PowerShell Sessions to destination computers (based on xml input)
