@@ -12,10 +12,8 @@ tags:
 # Fun!
 
 Today was a happy day. One of my co-workers asked me if I can help him with a little PowerShell. I never say 'no' to this. 
-<figure style="width: 150px" class="align-left">
-  <img src="{{ site.url }}{{ site.baseurl }}/assets/images/posts/remote-get-counter/picture1.jpg" alt="">
-  <figcaption>Panda</figcaption>
-</figure> 
+
+<![Panda] ({{ site.url }}{{ site.baseurl }}/assets/images/posts/remote-get-counter/picture1.jpg) 
 
 # The Story
 
@@ -25,9 +23,9 @@ So what's the story? He needed to get some performance counters from a bunch of 
 
 He wanted to generate counters on the endpoint, get the results through Invoke-Command and export them locally on his machine to further investigate. This is what he got:
 
-! [Error1]({{ site.url }}{{ site.baseurl }}/assets/images/posts/remote-get-counter/picture2.png)
+![Error1]({{ site.url }}{{ site.baseurl }}/assets/images/posts/remote-get-counter/picture2.png)
 
-! [Fixed]({{ site.url }}{{ site.baseurl }}/assets/images/posts/remote-get-counter/picture3.png)
+![Fixed]({{ site.url }}{{ site.baseurl }}/assets/images/posts/remote-get-counter/picture3.png)
 
 The issue here is, that data returned through Invoke-Command is deserialized, which is not the original `object`:
 
