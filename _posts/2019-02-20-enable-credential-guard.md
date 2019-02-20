@@ -9,13 +9,13 @@ tags:
 
 # Why
 
-[Credential Guard](https://docs.microsoft.com/en-us/windows/security/identity-protection/credential-guard/credential-guard-how-it-works) is one of `Identity Prection` features that enhance the security of credentials stored on your machine. In other words - if properly configured it will stop or seriously slow down an attacker from aquiring your credentials stored in memory.
+[Credential Guard](https://docs.microsoft.com/en-us/windows/security/identity-protection/credential-guard/credential-guard-how-it-works) is one of `Identity Protection` features that enhance the security of credentials stored on your machine. In other words - if properly configured it will stop or seriously slow down an attacker from aquiring your credentials stored in memory.
  
 There are a few prerequisites that must be fulfilled before it works.
 
 # Check
 
-Microsoft publishes a [Windows Defender Device Guard and Windows Defender Credential Guard hardware readiness tool](https://www.microsoft.com/download/details.aspx?id=53337) that I will use here to verify if our machine is ready.
+Microsoft publishes a [Windows Defender Device Guard and Windows Defender Credential Guard hardware readiness tool](https://www.microsoft.com/download/details.aspx?id=53337) that I will use here to verify if my machine is ready.
 
 ## Download and extract
 
@@ -61,7 +61,10 @@ Not all services are running.
 
 # Fix
 
-Seems like my machine is not ready. Time to fix it! The easiest way is to use the same script provided by Microsoft. This time with '-Enable -AutoReboot' parameters
+Seems like my machine is not ready. 
+> Time to fix it! 
+
+The easiest way is to use the same script provided by Microsoft. This time with '-Enable -AutoReboot' parameters
 
 ```powershell
 Start-Process powershell.exe -Verb RunAs -ArgumentList "$file -Enable -AutoReboot" -Wait
