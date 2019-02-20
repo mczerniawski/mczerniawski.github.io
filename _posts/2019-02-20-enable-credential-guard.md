@@ -32,11 +32,14 @@ $file = Get-ChildItem -Path (Join-Path -Path $DestinationUnzipPath -ChildPath $D
 Start-Process powershell.exe -Verb RunAs -ArgumentList "$file -Ready" -Wait
 Get-Content C:\DGLogs\DeviceGuardCheckLog.txt
 ```
-This code will
+
+This code will:
+
 - download the tool from MS site
 - extract it
 - start new PowerShell process as Admin (I hope you're not downloading files from Internet as Administrator? :grin: ) 
 - and finally will display the log. 
+
 ```
 PS C:\AdminTools\dgreadiness_v3.6> .\DG_Readiness_Tool_v3.6.ps1 -Ready
 ###########################################################################
@@ -59,11 +62,13 @@ Not all services are running.
 # Fix
 
 Seems like my machine is not ready. Time to fix it! The easiest way is to use the same script provided by Microsoft. This time with '-Enable -AutoReboot' parameters
+
 ```powershell
 Start-Process powershell.exe -Verb RunAs -ArgumentList "$file -Enable -AutoReboot" -Wait
 ```
 
 After a reboot let's check it again:
+
 ```
 PS C:\AdminTools\dgreadiness_v3.6> .\DG_Readiness_Tool_v3.6.ps1 -Ready
 ###########################################################################
