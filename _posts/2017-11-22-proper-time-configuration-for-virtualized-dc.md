@@ -11,7 +11,7 @@ tags:
 
 # Where's my time
 
-![Emmet]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-csvusage/picture1.jpg)
+![Emmet]({{ site.url }}{{ site.baseurl }}/assets/images/posts/time-dc-vm/picture1.jpg)
 
 Simple things are sometimes the most tricky.
 
@@ -38,7 +38,7 @@ What is the issue then? Imagine all your DCs are down, or under a heavy load or 
 
 To resolve this some advise to disable the Hyper-V integration component of Time Synchronization:
 
-![Nono]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-csvusage/picture2.png)
+![Nono]({{ site.url }}{{ site.baseurl }}/assets/images/posts/time-dc-vm/picture2.png)
 
 > **but that's not the best idea**. 
 
@@ -53,17 +53,17 @@ How should it be done then?
 4. All other Domain Controllers should synchronize from the PDC,
 5. All machines should synchronize from any Domain Controller.
 
-![AD]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-csvusage/picture3.png)
+![AD]({{ site.url }}{{ site.baseurl }}/assets/images/posts/time-dc-vm/picture3.png)
 
 # I've got not time, show me some code
 
 1. First, let's make sure our DCs have Time synchronization enabled: 
 
-![AD]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-csvusage/picture4.png)
+![AD]({{ site.url }}{{ site.baseurl }}/assets/images/posts/time-dc-vm/picture4.png)
 
 If not, we can easily fix that:
 
-![AD]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-csvusage/picture5.png)
+![AD]({{ site.url }}{{ site.baseurl }}/assets/images/posts/time-dc-vm/picture5.png)
 
 2. Then add registry entry on all DCs that will stop VM (once booted) from using VM IntegrationComponent Time Provider:
 
@@ -79,15 +79,15 @@ If not, we can easily fix that:
 
 Once done you'll get information that your PDC Emulator is synchronizing with external source:
 
-![AD]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-csvusage/picture6.png)
+![AD]({{ site.url }}{{ site.baseurl }}/assets/images/posts/time-dc-vm/picture6.png)
 
 And your other DCs will synchronize with your PDC:
 
-![AD]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-csvusage/picture7.png)
+![AD]({{ site.url }}{{ site.baseurl }}/assets/images/posts/time-dc-vm/picture7.png)
 
 # And we're back on right time track!
 
-![Emmet2]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-csvusage/picture8.jpg)
+![Emmet2]({{ site.url }}{{ site.baseurl }}/assets/images/posts/time-dc-vm/picture8.jpg)
 
 # Bonus
 
