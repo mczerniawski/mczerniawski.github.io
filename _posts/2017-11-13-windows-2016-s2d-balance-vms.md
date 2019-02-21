@@ -12,6 +12,7 @@ tags:
 # Reload!
 
 Another day - another dirty - quicky. 
+
 ![Reload]({{ site.url }}{{ site.baseurl }}/assets/images/posts/s2d-balance-vms/picture1.jpg)
 
 If you have a Windows 2016 Hyper-V cluster and a bunch of VMs you may have noticed an effect of auto balance feature. It evaluates a node's load based on some heuristics and then moves compute resources to a better node. More details can be found [here](https://blogs.msdn.microsoft.com/clustering/2016/04/29/failover-cluster-node-fairness-in-windows-server-2016/). It is enabled by default but can be easily adjusted if need be.

@@ -22,7 +22,7 @@ You can get an error like this:
 
 Now, getting vm after vm can be a little overwhelming, right?
 
-![VMs]({{ site.url }}{{ site.baseurl }}/assets/images/posts/remove-lingering/picture3.jpg)
+![VMs]({{ site.url }}{{ site.baseurl }}/assets/images/posts/remove-lingering/picture3.png)
 
 We could do a clean sweep and remove all DVDs from ALL Vms, but that's a little to... Trigger happy.
 
