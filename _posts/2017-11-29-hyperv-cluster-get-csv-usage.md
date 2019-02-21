@@ -19,11 +19,11 @@ While in the middle of something (moving VMs, load balancing resources, creating
 
 - I can get the information from Failover Cluster Manager:
 
-[FCM]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-csvusage/picture1.png)
+![FCM]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-csvusage/picture1.png)
 
 - I can get it using [Windows Admin Center](https://docs.microsoft.com/en-us/windows-server/manage/windows-admin-center/understand/windows-admin-center)
 
-[WAC]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-csvusage/picture2.png)
+![WAC]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-csvusage/picture2.png)
 
 - or I can get it through PowerShell
 
