@@ -13,7 +13,7 @@ tags:
 
 Today was a happy day. One of my co-workers asked me if I can help him with a little PowerShell. I never say 'no' to this. 
 
-<![Panda]({{ site.url }}{{ site.baseurl }}/assets/images/posts/remote-get-counter/picture1.jpg) 
+![Panda]({{ site.url }}{{ site.baseurl }}/assets/images/posts/remote-get-counter/picture1.jpg) 
 
 # The Story
 
