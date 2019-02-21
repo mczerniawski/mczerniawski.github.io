@@ -39,7 +39,7 @@ It's good to have all active nodes in a cluster queried with one sweep.  I'll be
 
 # Let's wrap it into a function:
 
-{% gist4b1cc1319d9a38eae3c352c8536f78a6 %}
+{% gist 4b1cc1319d9a38eae3c352c8536f78a6 %}
 The output will be like this:
 
 [Output]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-nodes-memory/picture3.png)
