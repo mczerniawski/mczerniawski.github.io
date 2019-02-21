@@ -11,7 +11,7 @@ tags:
 
 # Why
 
-Similar as before (here) having information about your cluster nodes memory usage can be helpful. Especially when creating a bunch of new VMs.
+Similar as before ([here](https://www.mczerniawski.pl/hyperv/hyperv-cluster-get-csv-usage/)) having information about your cluster nodes memory usage can be helpful. Especially when creating a bunch of new VMs.
 
 # How
 
