@@ -32,19 +32,19 @@ While in the middle of something (moving VMs, load balancing resources, creating
 There's a Cmdlet from FailoverClusters module that can provide us with all the information - `Get-ClusterSharedVolume`:
 
 
-[Get-CSV]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-csvusage/picture3.png)
+![Get-CSV]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-csvusage/picture3.png)
 
 It's rather not very detailed, but Get-Member will reveal what's inside:
 
-[Get-CSV]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-csvusage/picture4.png)
+![Get-CSV]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-csvusage/picture4.png)
 
 `SharedVolumeInfo` Property looks promising:
 
-[Get-CSV]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-csvusage/picture5.png)
+![Get-CSV]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-csvusage/picture5.png)
 
 Partition property is also an object, which holds very valuable information:
 
-[Get-CSV]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-csvusage/picture6.png)
+![Get-CSV]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-csvusage/picture6.png)
 
 Now I have all the information I need.
 
@@ -58,10 +58,10 @@ Let's wrap it up into a function and see how it goes:
 
 And the output:
 
-[Output]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-csvusage/picture7.png)
+![Output]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-csvusage/picture7.png)
 
 This comes quite handy for a quick glance:
 
-[Output]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-csvusage/picture8.png)
+![Output]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-csvusage/picture8.png)
 
 

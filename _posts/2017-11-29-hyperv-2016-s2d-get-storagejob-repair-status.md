@@ -15,16 +15,16 @@ So here's the deal.
 
 We're performing some regular maintenance on our Hyper-V 2016 S2D - i.e. patching. This includes rebooting nodes. While node is not online, Cluster performs storage repair jobs to keep our 3 way healthy. It's not good to reboot another node while repair job is in progress. To check the state of CSVs I can either use GUI:
 
-[CSV]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-storagejob/picture1.png)
+![CSV]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-storagejob/picture1.png)
 
 or PowerShell:
 
-[CSV]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-storagejob/picture2.png)
+![CSV]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-storagejob/picture2.png)
 
 With this I will see which drive is in degradaded state or repairing. 
 I can use another cmdlet to get the status of the job: 
 
-[CSV]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-storagejob/picture3.png)
+![CSV]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-storagejob/picture3.png)
 
 This on the other hand shows me how's the repair going, how long tasks are running or how much data is already processed. Which I don't get from here is which job relates to which drive. This can be usefull. Imagine you've got one repair job that is stuck or taking a long time. I'd like to know which CSV (Virtual Drive) is affected.
 
@@ -32,7 +32,7 @@ This on the other hand shows me how's the repair going, how long tasks are runni
 
 Both objects returned by either `Get-StorageJob` or `Get-VirtualDisk` have an object called ObjectID, which looks like this:
 
-[CSV]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-storagejob/picture4.png)
+![CSV]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-storagejob/picture4.png)
 
 Seems like the thing I'm looking. Now I just need to parse the string to get the last guid-like string between `{` and `}` and match it with `Get-VirtualDisk`'s output same position. 
 

@@ -43,11 +43,11 @@ VM stays in `'Stopped-Critical'` state. I try to kill the process vmwp.exe that 
 
 GUI way is to go to VM folder and check for xml name:
 
-[VM]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-vm-process-id/picture1.png)
+![VM]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-vm-process-id/picture1.png)
 
 Now, using ProcessExplorer I can add UserName column (View-> Select Columns) and check for given GUID:
 
-[GUID]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-vm-process-id/picture2.png)
+![GUID]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-vm-process-id/picture2.png)
 
 Or I can use PowerShell:
 

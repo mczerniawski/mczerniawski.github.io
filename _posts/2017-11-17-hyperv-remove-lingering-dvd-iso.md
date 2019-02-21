@@ -14,15 +14,15 @@ Another day - another dirty - quicky.
 
 So you've got a bunch of hosts and some VMs there. Some of those have iso files attached. Some of them shouldn't. Especially if that ISO is not accessible for all nodes in the cluster. 
 
-[DVD]({{ site.url }}{{ site.baseurl }}/assets/images/posts/remove-lingering/picture1.jpg)
+![DVD]({{ site.url }}{{ site.baseurl }}/assets/images/posts/remove-lingering/picture1.jpg)
 
 You can get an error like this:
 
-[Error1]({{ site.url }}{{ site.baseurl }}/assets/images/posts/remove-lingering/picture2.png)
+![Error1]({{ site.url }}{{ site.baseurl }}/assets/images/posts/remove-lingering/picture2.png)
 
 Now, getting vm after vm can be a little overwhelming, right?
 
-[VMs]({{ site.url }}{{ site.baseurl }}/assets/images/posts/remove-lingering/picture3.jpg)
+![VMs]({{ site.url }}{{ site.baseurl }}/assets/images/posts/remove-lingering/picture3.jpg)
 
 We could do a clean sweep and remove all DVDs from ALL Vms, but that's a little to... Trigger happy.
 

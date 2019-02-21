@@ -15,22 +15,22 @@ In one of my deloyments we have a 5 node Hyper-V 2016 S2D Cluster. It's based on
 
 It's been working great and we've achieved quite fancy numbers with it - over 1,3M IOPS during stress tests with VMFleet
 
-[IOPS]({{ site.url }}{{ site.baseurl }}/assets/images/posts/s2d-new-node-issues/picture1.png)
+![IOPS]({{ site.url }}{{ site.baseurl }}/assets/images/posts/s2d-new-node-issues/picture1.png)
 
 # The Issue
 
 Anyway - time has come and we needed to expand the cluster with another node.
 While adding the node and then creating new vdisk we had a small issue. In the end it didn't add the drives correctly to the cluster marking them as 'transient error':
 
-[Error1]({{ site.url }}{{ site.baseurl }}/assets/images/posts/s2d-new-node-issues/picture2.png)
+![Error1]({{ site.url }}{{ site.baseurl }}/assets/images/posts/s2d-new-node-issues/picture2.png)
 
 We tried removing and resetting those disks:
 
-[Error2]({{ site.url }}{{ site.baseurl }}/assets/images/posts/s2d-new-node-issues/picture3.png)
+![Error2]({{ site.url }}{{ site.baseurl }}/assets/images/posts/s2d-new-node-issues/picture3.png)
 
 But it didn't work as we had one repair job lingering in the background:
 
-[Error3]({{ site.url }}{{ site.baseurl }}/assets/images/posts/s2d-new-node-issues/picture4.png)
+![Error3]({{ site.url }}{{ site.baseurl }}/assets/images/posts/s2d-new-node-issues/picture4.png)
 
 (that CreateVirtualDisk is the one that failed).
 
@@ -52,5 +52,5 @@ After this I started an Optimization Job:
 
 and `Get-StorageJob` shows 'something is happening'. As you can see, the 'Repair" job that was lingering before, it's running now:
 
-[Success]({{ site.url }}{{ site.baseurl }}/assets/images/posts/s2d-new-node-issues/picture5.png)
+![Success]({{ site.url }}{{ site.baseurl }}/assets/images/posts/s2d-new-node-issues/picture5.png)
 

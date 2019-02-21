@@ -17,11 +17,11 @@ Similar as before ([here](https://www.mczerniawski.pl/hyperv/hyperv-cluster-get-
 
 - I can get the information from Failover Cluster Manager (one node at a time):
 
-[FCM]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-nodes-memory/picture1.png)
+![FCM]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-nodes-memory/picture1.png)
 
 - I can get it using Windows Admin Center
 
-[WAC]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-nodes-memory/picture2.png)
+![WAC]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-nodes-memory/picture2.png)
 
 - or I can get it through PowerShell
 
@@ -42,11 +42,11 @@ It's good to have all active nodes in a cluster queried with one sweep.  I'll be
 {% gist 4b1cc1319d9a38eae3c352c8536f78a6 %}
 The output will be like this:
 
-[Output]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-nodes-memory/picture3.png)
+![Output]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-nodes-memory/picture3.png)
 
 This comes quite handy for a quick glance:
 
-[Output]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-nodes-memory/picture4.png)
+![Output]({{ site.url }}{{ site.baseurl }}/assets/images/posts/get-nodes-memory/picture4.png)
 
 
 
