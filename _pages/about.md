@@ -34,7 +34,7 @@ This blog is also a kind of 'notebook' for me. **Something written down is bette
 
 ![github](../assets/images/aboutme/github.png)
 
-If you’d like to find any of my scripts – they’re [here]("http://github.com/mczerniawski")
+If you’d like to find any of my scripts – they’re [here](https://github.com/mczerniawski)
 
 Feel free to download, reuse or contribute!
 
