@@ -3,12 +3,12 @@ permalink: /about/
 title: "About"
 ---
 
-![That's me](../assets/images/aboutme/Arcontar.jpg)
+![That's me]({{ site.url }}{{ site.baseurl }}/assets/images/aboutme/Arcontar.jpg)
 
 ---
 ## Becoming an "IT Guy" 
 
-![Centennial Hall](../assets/images/aboutme/centennialhall.jpg)
+![Centennial Hall]({{ site.url }}{{ site.baseurl }}/assets/images/aboutme/centennialhall.jpg)
 
 I have started in Centennial Hall in Wroclaw in 2007. I was on my last year of studies. I wore a hat of a 1st line HelpDesk, 2nd line Admin and at the same time a 3rd line Architect of new solutions. Sometimes also a Magician with rabbits when necessary. I've learnt a ton then - installed my first Windows 2003 (32 bit) but also planned, deployed and maintained a LAN/WLAN/TV transmission for EuroBasket 2009 Championship. 
 
@@ -32,7 +32,7 @@ This blog is also a kind of 'notebook' for me. **Something written down is bette
 
 ---
 
-![github](../assets/images/aboutme/github.png)
+![github]({{ site.url }}{{ site.baseurl }}/assets/images/aboutme/github.png)
 
 If you’d like to find any of my scripts – they’re [here](https://github.com/mczerniawski)
 
