@@ -5,6 +5,10 @@ categories:
 tags:
     - Jekyll
     - WSL
+excerpt: Running a Jekyll in WSL on your Windows 10 machine
+toc: true
+toc_label: Jekyll on WSL
+last_modified_at: 2019-03-01T15:00:00+01:00
 ---
 
 # Down the Rabbit Hole
@@ -37,6 +41,19 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 One thing to remember - my account is not local administrator. I have another account for this purpose. I was unable to initialize Ubuntu using my regular account or `Run As Other User`. I had to grant myself admin rights, initialize Ubuntu and then revoke admin rights. 
 
 # Jekyll
+
+## UPDATED 2019-03-01
+
+Thanks to Damien Solodow ( [Web](https://t.co/6MrDuO8gjY?amp=1) [Twitter](https://twitter.com/DSolodow)) for pointing out that Jekyll has tutorial docs regarding WSL - [Jekyll on Windows](https://jekyllrb.com/docs/installation/windows/#installation-via-bash-on-windows-10).
+
+This code would prevent me from having all those issues described below:
+
+```
+sudo apt-add-repository ppa:brightbox/ruby-ng
+sudo apt-get update
+sudo apt-get install ruby2.5 ruby2.5-dev build-essential dh-autoreconf
+```
+---
 
 I hoped that this would be as simple as installing WSL. GitHub has a great [tutorial](https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll) as well how to do it but probably WSL comes into play here.
 

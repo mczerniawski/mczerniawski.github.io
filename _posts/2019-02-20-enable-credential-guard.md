@@ -5,6 +5,7 @@ categories:
 tags:
     - CredentialGuard
     - Windows 10
+excerpt: Easy way to enable Credential Guard on Win 10 machine
 ---
 
 # Why

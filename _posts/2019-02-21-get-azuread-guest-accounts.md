@@ -6,6 +6,7 @@ tags:
     - PowerShell
     - AzureAD
     - Office365
+excerpt: Clean Azure AD from unneeded Guest accounts
 ---
 
 # Cleanup Time
