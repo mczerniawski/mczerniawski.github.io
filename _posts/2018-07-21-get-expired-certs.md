@@ -1,7 +1,6 @@
 ---
 title: Get Expired Certs
 categories:
-    - PowerShell
     - Certificate
 tags:
     - PowerShell

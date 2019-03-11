@@ -1,9 +1,7 @@
 ---
 title: User Security Context Accumulated Too Many Security IDs
 categories:
-    - PowerShell
     - Office365
-    - ActiveDirectory
 tags:
     - PowerShell
     - Security Groups

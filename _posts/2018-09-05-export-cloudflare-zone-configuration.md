@@ -1,7 +1,7 @@
 ---
 title: Export CloudFlare zone configuration
 categories:
-    - PowerShell
+    - CloudFlare
 tags:
     - PowerShell
     - CloudFlare

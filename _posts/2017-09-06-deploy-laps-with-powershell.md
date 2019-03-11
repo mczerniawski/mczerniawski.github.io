@@ -2,11 +2,10 @@
 title: Deploy LAPS with PowerShell
 categories:
     - LAPS
-    - PowerShell
-    - Tutorial
 tags:
     - PowerShell
     - LAPS
+    - Tutorial
 toc: true
 toc_label: Deploy LAPS
 last_modified_at: 2019-01-22T23:00:00+01:00

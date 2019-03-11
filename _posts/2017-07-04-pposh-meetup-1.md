@@ -2,12 +2,12 @@
 title: PPoSh Meetup - Hyper-V Home Lab
 categories:
     - PPoSh
-    - PowerShell
-    - Tutorial
-    - Hyper-V
 tags:
     - PowerShell
     - HomeLab
+    - PPoSh
+    - Tutorial
+    - HyperV
 toc: true
 toc_label: Hyper-V Home Lab
 ---

@@ -1,14 +1,12 @@
 ---
 title: Remove AAD Group Membership from disabled on-premises AD users
 categories:
-    - PowerShell
-    - AzureAD
     - Office365
-    - ActiveDirectory
 tags:
     - PowerShell
     - AzureAD
     - Office365
+    - ActiveDirectory
 ---
 
 # The Problem

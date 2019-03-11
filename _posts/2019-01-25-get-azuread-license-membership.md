@@ -1,14 +1,12 @@
 ---
 title: Get AzureAD license details for all users
 categories:
-    - PowerShell
-    - AzureAD
     - Office365
-    - ActiveDirectory
 tags:
     - PowerShell
     - AzureAD
     - Office365
+    - ActiveDirectory
 ---
 
 # The Story

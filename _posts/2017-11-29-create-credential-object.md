@@ -2,7 +2,6 @@
 title: Create credential object with LAPS
 categories:
     - LAPS
-    - PowerShell
 tags:
     - PowerShell
     - LAPS

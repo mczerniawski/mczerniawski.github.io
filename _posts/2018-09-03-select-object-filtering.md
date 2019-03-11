@@ -2,9 +2,9 @@
 title: Select-Object filtering
 categories:
     - PowerShell
-    - Select-Object
 tags:
     - PowerShell
+    - Select-Object
 ---
 
 # Select-Object simplified

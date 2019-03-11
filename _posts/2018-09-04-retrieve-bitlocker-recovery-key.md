@@ -1,9 +1,6 @@
 ---
 title: Retrieve BitLocker Recovery Key
 categories:
-    - PowerShell
-    - Office365
-    - ActiveDirectory
     - BitLocker
 tags:
     - PowerShell

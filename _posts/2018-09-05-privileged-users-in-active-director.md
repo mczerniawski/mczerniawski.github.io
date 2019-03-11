@@ -2,7 +2,6 @@
 title: Privileged Users in Active Directory
 categories:
     - ActiveDirectory
-    - PowerShell
 tags:
     - PowerShell
     - ActiveDirectory
