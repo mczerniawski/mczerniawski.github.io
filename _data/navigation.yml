@@ -12,7 +12,7 @@ main:
   #  url: /talks/
   - title: "Archive Posts"
     url: /year-archive/
-  #- title: "Sitemap"
-  #  url: /sitemap/
-  #- title: "Terms &amp; Privacy Policy"
-  #  url: /terms/
+  - title: "Tags"
+    url: /tags/
+  - title: "Categories"
+    url: /categories/

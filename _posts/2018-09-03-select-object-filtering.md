@@ -1,13 +1,11 @@
 ---
-title: Select-Object filtering
+title: Select-Object filtering simplified
 categories:
     - PowerShell
 tags:
     - PowerShell
     - Select-Object
 ---
-
-# Select-Object simplified
 
 Just a quickie note.
 
