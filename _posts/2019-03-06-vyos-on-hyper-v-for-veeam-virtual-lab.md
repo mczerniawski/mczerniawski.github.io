@@ -3,7 +3,7 @@ title: VyOS on Hyper-V for Veeam Virtual Lab
 categories:
     - Veeam
 tags:
-    - Hyper-V
+    - HyperV
     - VyOS
     - Backup
 excerpt: Configure more advanced Veeam lab with VyOS router and Hyper-V
