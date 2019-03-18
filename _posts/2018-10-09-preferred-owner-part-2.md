@@ -12,10 +12,10 @@ excerpt: Configure Preferred Owner through PowerShell
 
 # Preffered Owner
 
-- [Part 1](http://localhost:4000/hyperv/preferred-owner-possible-owner-antiaffinity/) covers some theory and GUI configuration.
-- [Part 2](http://localhost:4000/hyperv/preferred-owner-part-2/) will focus on setting Preferred Owners with Powershell.
-- [Part 3](http://localhost:4000/hyperv/possible-owner-part-3/) will explain logic behind Possible Owners in PowerShell function.
-- [Part 4](http://localhost:4000/hyperv/anti-affinity-part-4/) will cover the last step - setting anti-affinity groups.
+- [Part 1](https://www.mczerniawski.pl/hyperv/preferred-owner-possible-owner-antiaffinity/) covers some theory and GUI configuration.
+- [Part 2](https://www.mczerniawski.pl/hyperv/preferred-owner-part-2/) will focus on setting Preferred Owners with Powershell.
+- [Part 3](https://www.mczerniawski.pl/hyperv/possible-owner-part-3/) will explain logic behind Possible Owners in PowerShell function.
+- [Part 4](https://www.mczerniawski.pl/hyperv/anti-affinity-part-4/) will cover the last step - setting anti-affinity groups.
 - Part 5 will describe reporting of current configuration in the cluster.
 
 In first part I've covered some basic information about different advanced assignment policies for VM in a Failover cluster. This time I'd like to use some PowerShell to set `'preferred owner'` for my VMs.

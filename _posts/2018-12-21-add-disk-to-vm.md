@@ -62,7 +62,7 @@ Knowing this I ended up with a function that will:
 Here's the code:
 {% gist e1b2c5e907e53e8e8f45c21496589412 %}
 
-What's next? Well a VHD needs to be formatted right? Booring:) Glad I have this [Format Drive. Remotely](http://localhost:4000/powershell/format-drive-remotely/).
+What's next? Well a VHD needs to be formatted right? Booring:) Glad I have this [Format Drive. Remotely](https://www.mczerniawski.pl/powershell/format-drive-remotely/).
 
 # Final code
 
