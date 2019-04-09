@@ -20,25 +20,27 @@ Almost two years later I've decided to move the blog to GitHub. This is VERY eas
 
 I started simple - took [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) template, edited _config.yml file and pushed everything to GitHub. There's nothing wrong with it but after each commit I had to wait for GitHub to build it (or not - and notify me via email about errors in files) just to spot my mistakes - wrong image path, wrong markdown syntax, etc.:
 
-![Ups]({{ site.url }}{{ site.baseurl }}/assets/images/posts/run-jekyll-localy/picture1.png) 
+![Ups]({{ site.url }}{{ site.baseurl }}/assets/images/posts/run-jekyll-localy/picture1.png)
 
-> Time has come to set up Jekyll localy! 
+> Time has come to set up Jekyll localy!
 
 As I'm running Windows 10 I did want to try out WSL and set it up using Ubuntu flavor. IF everything would go smooth - I wouldn't have the experience to share here :grin:
 
 # WSL - here we go
 
 Installation is pretty straightforward (and well documented on [docs.microsoft.com](https://docs.microsoft.com/en-us/windows/wsl/install-win10)):
+
 - Enable optional feature
 
 ```powershell
 Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
 ```
+
 - install it from Windows Store
 ![Store]({{ site.url }}{{ site.baseurl }}/assets/images/posts/run-jekyll-localy/picture2.png) 
 - Initialize new distro instance (just follow [this](https://docs.microsoft.com/en-us/windows/wsl/initialize-distro) article)
 
-One thing to remember - my account is not local administrator. I have another account for this purpose. I was unable to initialize Ubuntu using my regular account or `Run As Other User`. I had to grant myself admin rights, initialize Ubuntu and then revoke admin rights. 
+One thing to remember - my account is not local administrator. I have another account for this purpose. I was unable to initialize Ubuntu using my regular account or `Run As Other User`. I had to grant myself admin rights, initialize Ubuntu and then revoke admin rights.
 
 # Jekyll
 
@@ -48,31 +50,32 @@ Thanks to Damien Solodow ( [Web](https://t.co/6MrDuO8gjY?amp=1) [Twitter](https:
 
 This code would prevent me from having all those issues described below:
 
-```
+```bash
 sudo apt-add-repository ppa:brightbox/ruby-ng
 sudo apt-get update
 sudo apt-get install ruby2.5 ruby2.5-dev build-essential dh-autoreconf
 ```
+
 ---
 
 I hoped that this would be as simple as installing WSL. GitHub has a great [tutorial](https://help.github.com/en/articles/setting-up-your-github-pages-site-locally-with-jekyll) as well how to do it but probably WSL comes into play here.
 
 Anyway - my Ubuntu flavor had no ruby installed. That's easily fixable. 
 
-```
+```bash
 sudo apt-get update && sudo apt-get upgrade
 sudo apt-get install ruby
 ```
 
 After that installing Bundler was easy:
 
-```
+```bash
 sudo gem install bundler
 ```
 
 Now, according to the tutorial I need to modify my gemfile and make sure it has specific entries. As minimal-mistakes template is using additional plugins my `gemfile` looks like this:
 
-```
+```bash
 source "https://rubygems.org"
 gem "github-pages", group: :jekyll_plugins
 gem "jekyll-include-cache"
@@ -85,13 +88,14 @@ gem "jemoji"
 
 Now, switch to the directory where my blog repository exists and run `bundle install`:
 
-```
+```bash
 cd /mnt/c/repos/Private-GIT/mczerniawski.pl
 bundle install
 ```
 
 Not so fast:
-```
+
+```bash
 Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
 
     current directory: /tmp/bundler20190227-9824-1pzfeiycommonmarker-0.17.13/gems/commonmarker-0.17.13/ext/commonmarker
@@ -117,7 +121,7 @@ In Gemfile:
 
 Let's fix it by adding ruby headers and then commonmarker
 
-```
+```bash
 sudo apt-get install ruby-all-dev zlib1g-dev libxslt1-dev libxml2-dev
 sudo gem install commonmarker
 bundle install
@@ -125,7 +129,7 @@ bundle install
 
 aaaand it's not working either. This time it hangs on nokogiri gem. Only after `CTRL+C` it outputs the error:
 
-```
+```bash
 Installing nokogiri 1.10.1 with native extensions
 ^C
 Errno::ENOTEMPTY: Directory not empty @ dir_s_rmdir - /tmp/bundler20190227-16048-ygkmeynokogiri-1.10.1
@@ -141,7 +145,7 @@ In Gemfile:
 
 Let's build it with local libraries and finish install with `bundle install` again:
 
-```
+```bash
 sudo gem install nokogiri -- --use-system-libraries --with-xml2-include=/usr/include/libxml2 --with-xml2-lib=/usr/lib/
 bundle install
 ```
@@ -150,7 +154,7 @@ bundle install
 
 Finally, let's run the blog with `jekyll serve`
 
-```
+```bash
 Configuration file: /mnt/c/repos/Private-GIT/mczerniawski.pl/_config.yml
             Source: /mnt/c/repos/Private-GIT/mczerniawski.pl
        Destination: /mnt/c/repos/Private-GIT/mczerniawski.pl/_site
@@ -169,10 +173,10 @@ Configuration file: /mnt/c/repos/Private-GIT/mczerniawski.pl/_config.yml
 
 > Success
 
-![Success]({{ site.url }}{{ site.baseurl }}/assets/images/posts/run-jekyll-localy/picture3.png) 
+![Success]({{ site.url }}{{ site.baseurl }}/assets/images/posts/run-jekyll-localy/picture3.png)
 
 # Summary
 
-Wish it was a little bit more... straightforward. At the same time, great `kudos` to GitHub for doing the heavylifting! 
+Wish it was a little bit more... straightforward. At the same time, great `kudos` to GitHub for doing the heavylifting!
 
 :smile:
