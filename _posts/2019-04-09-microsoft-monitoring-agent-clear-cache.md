@@ -149,7 +149,7 @@ $ServiceStatus | Format-Table
 
 Issues with VMs are sometimes trivial.
 
-> Maybe the service isn't working,
+> Maybe the service isn't working,  
   > or it's reporting to WRONG Workspace
 
 :grin:
