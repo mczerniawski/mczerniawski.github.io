@@ -143,9 +143,6 @@ OperatingSystem C:        236.22 FullyEncrypted         100        {Tpm, Recover
 
 ```
 
-
-
-
 # Retrieve RecoveryKey
 
 ## From Active Directory
@@ -166,5 +163,4 @@ Navigate to https://myapps.microsoft.com, go to the `Profile` page and see all t
 ![Profile page](/assets/images/posts/retrieve-bitlocker/picture10.png)
 
 From there You can view the recovery password for You devices.
-Btw - it's not very intuitive - You cannot access this informatorom directly from office.com -> profie pages. 
-
+Btw - it's not very intuitive - You cannot access this informatorom directly from office.com -> profie pages.
