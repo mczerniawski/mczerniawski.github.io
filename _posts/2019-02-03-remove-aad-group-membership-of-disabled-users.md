@@ -19,7 +19,8 @@ This was all fine till we realized that apart from on-premises groups user also 
 
 # The Resolution
 
-There were two steps to fix this. 
+There were two steps to fix this.
+
 1. One time sweep to remove all stale groups of disabled users.
 2. Expand our off-boarding process to include this task as well.
 
@@ -51,6 +52,7 @@ $disabledUsers | Export-Csv -Path (Join-Path -Path $exportPath -ChildPath 'disab
 
 #get user membership in AzureAD Groups
 Connect-AzureAD -Credential $credential
+Connect-MsolService -Credential $credential
 $disabled_OnlineMembership = foreach ($user in $disabledUsers) {
     if ($user.UserPrincipalName) {
         $userObjectId = Get-Msoluser -UserPrincipalName $user.UserPrincipalName | Select-Object -ExpandProperty ObjectId
