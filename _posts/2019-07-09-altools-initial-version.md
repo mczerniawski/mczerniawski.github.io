@@ -31,7 +31,7 @@ What are some usage examples? Currently we're using Azure Log to:
 - store results of internal processes without dependancy on any database
 - visualize data with PowerBI reporting
 
-If you'd like to see some PowerShell usage example - [here's the link](https://github.com/mczerniawski/ALTools/blob/master/README.md) or two mentioned repos:
+If you'd like to see some PowerShell usage example - [here's the link](https://github.com/mczerniawski/ALTools/blob/master/README.md) of two mentioned repos:
 
 - [WEFTools](https://github.com/mczerniawski/WEFTools/blob/master/docs/Run.md)
 - [pChecksAD](https://github.com/mczerniawski/pChecksAD/blob/master/docs/Run-Checks.md)
