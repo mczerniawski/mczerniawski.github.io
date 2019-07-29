@@ -44,7 +44,7 @@ $Users = foreach ($OU in $OUs) {
     }
 }
 
-$FinalUsers | Sort-Object
+$FinalUsers = $Users| Sort-Object
 ```
 
 As I'll be using `for()` loop to split into groups, I need to know how many groups will be needed. In other words - If I would have 412 users and would like to split in chunks of 40, I would get 11 groups. If there would be 754 users I would need 19 groups.
@@ -93,7 +93,7 @@ $Users = foreach ($OU in $OUs) {
     }
 }
 
-$FinalUsers | Sort-Object
+$FinalUsers =$Users| Sort-Object
 
 $maxGroups  = [math]::Round($FinalUsers.Count / $SplitAt)
 
