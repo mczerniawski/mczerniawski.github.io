@@ -11,7 +11,7 @@ toc: true
 toc_label: Manage snapshots
 ---
 
-# Simple story
+# Show me all your snapshots
 
 We have a cluster with a bunch of VMs. Let's say around 300 :grin:.  
 Some actions require us to take a snapshot of certain VMs and then remove them after we're sure everything is ok.  
