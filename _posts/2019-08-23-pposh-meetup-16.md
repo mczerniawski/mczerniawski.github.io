@@ -24,7 +24,7 @@ We also hosted MS Teams meeting and live streamed to YouTube. You can find us [h
 
 Jakub started with Introduction to Pester.
 
-![Jakubs]({{ site.url }}{{ site.baseurl }}/assets/images/posts/pposh-16/picture1.jpg)
+![Jakub]({{ site.url }}{{ site.baseurl }}/assets/images/posts/pposh-16/picture1.jpg)
 
 Although I'm using Pester in Infra tests for a few years now, using it as Unit Test Framework (the reason it was founded) is still in my backlog. As this was closer to a workshop (we tried to solve Jakub's riddles together) I feel I'm armed with necessary skills now :smile:.
 
@@ -34,7 +34,7 @@ Jakub also seemed happy with us:
 
 Here is [Jakub's talk recording](https://www.youtube.com/watch?v=KgfwVcGZQis)
 
-## Pester against sloopines
+## Pester against sloppiness
 
 Then, after a short break for pizza - as it was nearly 19.00 - Bartek took the stage.
 
