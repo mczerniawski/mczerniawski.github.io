@@ -96,9 +96,9 @@ Invoke-Command -ComputerName $Computers -Credential $creds -ScriptBlock {
 
     Stop-Service -ServiceName 'HealthService'
     #Remove files
-    Remove-item -path 'C:\Program Files\Microsoft Monitoring Agent\Agent\Health Service State'
+    Remove-item -path 'C:\Program Files\Microsoft Monitoring Agent\Agent\Health Service State'  -Force -confirm:$false -Recurse
     #Remove registry
-    Get-ChildItem 'HKLM:\software\microsoft\hybridrunbookworker' | Remove-Item
+    Get-ChildItem 'HKLM:\software\microsoft\hybridrunbookworker' | Remove-Item -Force -confirm:$false -Recurse
     #let it rest a while. It was a hard task! :)
     Start-sleep -Seconds 10
 
