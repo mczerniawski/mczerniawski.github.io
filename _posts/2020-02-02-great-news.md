@@ -19,7 +19,7 @@ Well, now I can say it was a pleasure, but when I was writing it... Let's just s
 
 I wasn't able to dedicate as much time to my GitHub repositories as I would like to :disappointed:
 
-End of the year is always hectic - especially if your daughter has Birthday during the Christmas Eve and ... both of your kids got some flu and are sick for nearly two months now. :sob:
+End of the year is always hectic - especially if your daughter has Birthday during the Christmas  and ... both of your kids got some flu and are sick for nearly two months now. :sob:
 
 Anyway - I plan to get back to more frequent blogging - a lot of drafts awaits - and coding!
 
