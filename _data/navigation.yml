@@ -6,8 +6,8 @@ main:
     url: /about/
   #- title: 'Arcon'
   #  url: /arcon/
-  - title: "PPoSh"
-    url: /pposh/
+  #- title: "PPoSh"
+  #  url: /pposh/
   #- title: "Talks"
   #  url: /talks/
   - title: "Archive Posts"
