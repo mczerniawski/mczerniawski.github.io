@@ -40,7 +40,9 @@ I would like to thank all those who helped me be where I am now.
 
 The biggest :heart: goes to my familly for neverending support.
 
-Then - to all bloggers - I've learnt so much from you since my journey began that my only choice was to give it back!
+Then to all my friends that are with me in this journey!
+
+Last but not least - to all bloggers - I've learnt so much from you since my journey began that my only choice was to give it back!
 
 The first `kick` came after I met Jeffrey Snover in 2016 during first PSConf and then again in 2017 at the very same conference!  
 PPoSh was founded and grounded then and the fun-ride began!
