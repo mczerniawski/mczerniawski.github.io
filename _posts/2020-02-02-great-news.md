@@ -26,7 +26,7 @@ Anyway - I plan to get back to more frequent blogging - a lot of drafts awaits -
 ## The Great ~~Fear~~ News
 
 There was an email from a specific `FROM:` I was afraid to receive. The `MVP Global Administrator`.
-It cameon on Saturday and it began with:
+It came on on Saturday and it began with:
 
 ![MVP]({{ site.url }}{{ site.baseurl }}/assets/images/posts/the-great-news/picture1.png)
 
