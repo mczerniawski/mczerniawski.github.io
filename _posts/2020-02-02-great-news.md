@@ -1,75 +1,228 @@
 ---
-title: Great News
+title: Windows Virtual Desktop - How To
 categories:
-    - Random
+    - Azure
 tags:
-    - MVP
-excerpt: I've got some great news to share
+    - WindowsVirtualDesktop
+excerpt: How to deploy Windows Virtual Desktop in production
+toc: true
+toc_label: WVD
 ---
 
-# Time is a constraint 
+## Remote Access - the Modern Way
 
-I haven't posted anything recently, mainly due to too many things happening.  
-In 2019 I've been to 2 conferences and 7 meetups as a speaker.  
-I've presented some of my recent work at THE GREATEST conference - [PSConf 2019](https://psconf.eu) and Best Spent Day with PowerShell at [PSDayUK](https://psday.uk).  
-If you're interested, all my slides and code are available on [GitHub](https://github.com/mczerniawski/Presentations).
+Our company - as many others - decided to go full remote in the following days.
+It required some changes on our (IT) side, but not that much.
+We already supported this kind of work:
 
-I've also had the pleasure to write a chapter for [PSConfBook volume 2](https://leanpub.com/psconfbook2).  
-Well, now I can say it was a pleasure, but when I was writing it... Let's just say it is a brand new experience in my Spell Book. :satisfied:
+- Access to on-premises apps through Azure App proxy
+- VPN to our sites
+- Site2Site VPNs between our office sites
+- most employees using laptops
 
-I wasn't able to dedicate as much time to my GitHub repositories as I would like to :disappointed:
+We've decided to launch Windows Virtual Desktop (WVD) as a backup access for some of our employees.
+This way they can use a secure desktop that has access to our on-premises through VPN S2Site (between us and Azue).
 
-End of the year is always hectic - especially if your daughter has Birthday during the Christmas  and ... both of your kids got some flu and are sick for nearly two months now. :sob:
+All seemed easy. Just follow Microsoft Mechanics ([part1](https://www.youtube.com/watch?v=yAKmuZpwVyg), [part2](https://www.youtube.com/watch?v=Xhu7CltjS8w) and [part3](https://www.youtube.com/watch?v=I8gcl8Zvcps)).  
+I'll have to admit that [MS Docs](https://docs.microsoft.com/en-us/azure/virtual-desktop/tenant-setup-azure-active-directory) for this topic are really good.
 
-Anyway - I plan to get back to more frequent blogging - a lot of drafts awaits - and coding!
+> And RT*M if you're stuck!
 
-## The Great ~~Fear~~ News
+Most tutorials shows a simple deployment within a demo tenant where you're using global admin for everything. My case, and probably your's too, is a bit different.
 
-There was an email from a specific `FROM:` I was afraid to receive. The `MVP Global Administrator`.
-It came on on Saturday and it began with:
+In this post I'll assume you already have configured:
 
-![MVP]({{ site.url }}{{ site.baseurl }}/assets/images/posts/the-great-news/picture1.png)
+- Azure tenant
+- on-premises AD synced with AAD using ADConnect
+- proper licenses assigned to your users (Windows Virtual Desktop requries at least Windows E3 - [link](https://azure.microsoft.com/en-us/pricing/details/virtual-desktop/))
+- VPN site to site to Azure
+- a VM as a Domain Controller in Azure (or [ADDS deployed](https://docs.microsoft.com/en-us/azure/active-directory-domain-services/))
+- proper networking in Azure where your WVD VMs will be located
 
-I'm thrilled and humbled to join the ranks of so many great people!
+In our case we've decided to deploy a VM in Azure that will be a Domain Controller - in addition to our on-premises. This is a Standard B2s (2 vcpus, 4 GiB memory) VM which doesn't cost much!
 
-It's still a distant thought - like it has happened to someone else!
+## Step by Step
 
-## Thank-You Part
+Let me briefly describe the whole process:
 
-I would like to thank all those who helped me be where I am now.
+1. Grant consent to Windows Virtual Desktop for Azure tenant
+1. Add RDS tenant to Azure tenant
+1. Create AzureApplication with proper permissions to manage WVD
+1. Deploy WVD through Azure marketplace
+1. Add users to those WVDs
+1. Guide users on using WVD (Web and RemoteApplication)
 
-The biggest :heart: goes to my familly for neverending support.
+AFAIK, as of today (18.03.2020), there is no way to:
 
-Then to all my friends that are with me in this journey!
+- grant users logon rights to those VMs using Azure Portal
+- simple way to scale-out the environment
 
-Last but not least - to all bloggers - I've learnt so much from you since my journey began that my only choice was to give it back!
+There are scripts on [Microsoft Github](https://github.com/Azure/RDS-Templates/tree/master/wvd-sh/WVD%20scaling%20script) but as the readme states:
 
-The first `kick` came after I met Jeffrey Snover in 2016 during first PSConf and then again in 2017 at the very same conference!  
-PPoSh was founded and grounded then and the fun-ride began!
+> This sample PowerShell script that can be used as a starting point for developing a solution to automatically scale a session host virtual machiness in Windows Virtual Desktop deployment.
 
-When I was preparing my first two talks for PSConf 2018, my son (8-year-old back then) approached me and asked - `Daddy, what do you get from this? Are you being paid?`
+It is not near any 'easy' solutions now. Hopefully we will get more from the Dev Team soon :smile:
 
-I smiled and instantly answered - 'No, I get nothing for this'. And before I was able to add anything else another question came `So why do you do this?`
+For now - if you'd like to scale out - you can go through Azure Marketplace and deploy it again - with a changed number of hosts. It won't destroy current solution. It will just add/remove VMs from the Host Pool. Then you can delete/deprovision those not needed.
 
-Then I paused for a second and replied
-> 'I've put it wrong. I'm not being paid, but I get a LOT. I get to know fantastic, open minded and always willing to help people. I can learn from THEM. People I follow, read everyday and learn from 'remotely'. I can meet them in person! Yea, the cost is that I'm petrified for 2 hours (2 talks!) but it's not much comparing to the benefit of it.'
+For all this you will need following `variables`:
 
-Then I asked him what would he do, if someone would help him with his homework. He replied he would help them too.
+- Tenant ID
+- Subscription ID
+- WVD Tenant Name
+- WVD Host Pool Name
+- WVD VMs Prefix
+- Azure AD Application DisplayName
+- Resource Group Name
+- AD account that has permissions to Add computer objects to specific OU
+- Virtual Network and VM subnet where the VMs will be stored
 
-> 'So this is why I do this' I've added. 'I cannot help THOSE people as they are far away and know more than I do, but I can help others. Help them and share what I already know'.
+Let's start!
 
-Don Jones describes it best in [Be The Master](https://donjones.com/be-the-master)!
+### Grant consent to Windows Virtual Desktop for Azure tenant
 
-And so, with this year coming I plan to do the same!
+This is simply done by visiting [RDWeb](https://rdweb.wvd.microsoft.com) site and providing your Tenant ID for both Consent Options - `Server` and `Client`
 
-We're running [PPoSh Meetups](https://www.meetup.com/Polish-PowerShell-Group-PPoSh) monthly - probably visiting more cities in Poland. I'm going to more [SysOps Devops meetups](https://www.meetup.com/SysOpsWro/) as well.
+![Consent]({{ site.url }}{{ site.baseurl }}/assets/images/posts/wvd-how-to/picture1.png)
 
-I'm honored to join [PS Conf EU 2020](https://psconf.eu) speaker ranks once again!
+### Add RDS tenant to Azure tenant
 
-And it is just the first half of 2020!
+To add RDS to Azure tenant you will need `Tenant ID` and `Subscription ID` where that will be deployed.  
+You can either get it through Azure GUI or with PowerShell. Use your Azure Global Admin account to conenct to Azure:
 
-## MVP
+```powershell
+Connect-AZAccount
 
-I still cannot belive this :grin:
+#Select in which subscription you want to deploy your WVD. This will also give you the Tenant ID
+$Subscription = Get-AzSubscription | Out-GridView -PassThru
 
-![MVP]({{ site.url }}{{ site.baseurl }}/assets/images/mvp.jpg)
+Install-Module Microsoft.RDInfra.RDPowerShell
+Import-Module Microsoft.RDInfra.RDPowerShell
+
+Add-RDSAccount -DeploymentUrl https://rdbroker.wvd.microsoft.com
+
+$WVDTenantName = 'WVD Pool 1'
+
+New-RdsTenant -name $WVDTenantName -AadTenantId $Subscription.TenantId -AzureSubscriptionId $Subscription.Id
+```
+
+### Create AzureApplication with proper permissions to manage WVD
+
+Now we need to create Azure Application and grant permissions. For this we will use another Azure PowerShell Module :grin:
+
+```powershell
+
+Import-Module AzureAD
+$AzureADAppDisplayName = 'Windows Virtual Desktop Svc Principal'
+$aadContext = Connect-AzureAD
+$svcPrincipal = New-AzureADApplication -AvailableToOtherTenants $true -DisplayName $AzureADAppDisplayName
+$svcPrincipalCreds = New-AzureADApplicationPasswordCredential -ObjectId $svcPrincipal.ObjectId
+$AzureADApplication = @{
+    Name = $AzureADAppDisplayName
+    AppID = $svcPrincipal.AppId
+    Password =$svcPrincipalCreds.Value
+    TenantGuid =$aadContext.TenantId.Guid
+}
+#Output the information. Would be best to Export-CliXML if you do have PowerShell Logging enabled!
+$AzureADApplication
+```
+
+I usually don't do this for Azure AD Applications but...
+
+> Write down the password (in a Password Manager preferably)
+
+You will need this identity every time you will want to redeploy the solution (scale out).
+
+### Deploy WVD through Azure marketplace
+
+Now go to Azure Portal, select Create Resource and fill in the information.
+
+![WVD]({{ site.url }}{{ site.baseurl }}/assets/images/posts/wvd-how-to/picture2.png)
+
+![WVD]({{ site.url }}{{ site.baseurl }}/assets/images/posts/wvd-how-to/picture3.png)
+
+![WVD]({{ site.url }}{{ site.baseurl }}/assets/images/posts/wvd-how-to/picture4.png)
+
+![WVD]({{ site.url }}{{ site.baseurl }}/assets/images/posts/wvd-how-to/picture5.png)
+
+![WVD]({{ site.url }}{{ site.baseurl }}/assets/images/posts/wvd-how-to/picture6.png)  
+
+### Add users to those WVDs
+
+Once the deployment is done we can grant users the access. In my case it's adding them to:
+
+- AD group that will grant them Windows E5 license
+- WVD `Desktop Application Group`
+
+```powershell
+$UsersForWVD = @('user1', 'user2','user3')
+$TenantName = 'WVD Pool 1'
+$HostPoolName = 'WVD1-WE-HostPool'
+$Context = Add-RDSAccount -DeploymentUrl https://rdbroker.wvd.microsoft.com
+$AzureContext = Connect-AzureAD
+$DomainName = 'contoso.com'
+$LicenseADGroup = 'Cloud_Windows10Enterprise_E5'
+
+foreach ($user in $UsersForWVD) {
+    $UserUPN = '{0}@{1}' -f $user, $Domain
+    Add-ADGroupMember -Identity $LicenseADGroup -Members $User
+    Add-RdsAppGroupUser -TenantName $TenantName -HostPoolName $HostPoolName -AppGroupName "Desktop Application Group" -UserPrincipalName $UserUPN
+}
+```
+
+### Guide users on using RemoteApplication
+
+Now we have the easiest part done. Next is guiding how to connect to the service. :grin:
+
+Users can connect to Windows Virtual Desktop:
+
+- using Web Browser
+
+or
+
+- using dedicated application
+
+#### Using Web Browser
+
+1. Go to https://aka.ms/wvdweb
+1. You will be prompted for your corporate login and password
+1. Click on the 'Session Desktop' Icon and select which resources you'd like to use.
+
+![App]({{ site.url }}{{ site.baseurl }}/assets/images/posts/wvd-how-to/picture7.png)
+
+![App]({{ site.url }}{{ site.baseurl }}/assets/images/posts/wvd-how-to/picture8.png)
+
+You'll be prompted for your credentials once again (this time for the VM itself)
+
+![App]({{ site.url }}{{ site.baseurl }}/assets/images/posts/wvd-how-to/picture9.png)
+
+#### Using Remote App
+
+There is a dedicated app for [Windows](https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-windows-7-and-10), [Android](https://play.google.com/store/apps/details?id=com.microsoft.rdc.android), [macOS](https://docs.microsoft.com/en-us/azure/virtual-desktop/connect-macos) or [iOS](https://apps.apple.com/us/app/microsoft-remote-desktop/id714464092)
+
+Once you have the application installed, run it, click `Subscribe` and provide your corporate login:
+
+![App]({{ site.url }}{{ site.baseurl }}/assets/images/posts/wvd-how-to/picture10.png)
+
+If it won't find the RDFeed, please provide this URL as a feed: https://rdweb.wvd.microsoft.com
+
+##### Additional Settings
+
+Once you run the application you can adjust the settings - right click on the `Session Desktop` and select `Settings`
+
+![App]({{ site.url }}{{ site.baseurl }}/assets/images/posts/wvd-how-to/picture11.png)
+
+If you unselect `Use default settings` you can set more options:
+
+![App]({{ site.url }}{{ site.baseurl }}/assets/images/posts/wvd-how-to/picture12.png)
+
+## Summary
+
+I must admit that overall I'm pretty impressed by this solution.  
+I've set up on-premises RDS farms before - it wasn't hard.  
+BUT, if you want to have a solution that is High Available - it's getting pretty complex. With Windows Virtual Desktop - it's very easy.  
+There are still some rough edges. It's not a `single-button-click`. Also not all options (compared to on-premises) are available but taking into consideration this is still a new solution - I'm very satisfied.
+
+But, what's more important - our users have access to secure environment without much issues. 
+
+Now, how to monitor the usage? Stay tuned!
