@@ -9,6 +9,14 @@ toc: true
 toc_label: Monitor WVD
 ---
 
+---
+
+1. [How to](https://www.mczerniawski.pl/azure/wvd-how-to/)
+1. [Monitor](https://www.mczerniawski.pl/azure/wvd-monitor/)
+1. [Cleanup](https://www.mczerniawski.pl/azure/wvd-cleanup/)
+
+---
+
 ## Deploy then Monitor
 
 Last time we've [deployed the WVD solution into production](https://www.mczerniawski.pl/azure/wvd-how-to/).  

@@ -9,6 +9,14 @@ toc: true
 toc_label: Remove WVD
 ---
 
+---
+
+1. [How to](https://www.mczerniawski.pl/azure/wvd-how-to/)
+1. [Monitor](https://www.mczerniawski.pl/azure/wvd-monitor/)
+1. [Cleanup](https://www.mczerniawski.pl/azure/wvd-cleanup/)
+
+---
+
 ## Cleanup time
 
 Recently we'de [deployed](https://www.mczerniawski.pl/azure/wvd-how-to/) and set up [basic monitoring](https://www.mczerniawski.pl/azure/wvd-monitor/) with Azure App Insight and Log Analytics.
