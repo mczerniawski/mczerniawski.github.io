@@ -12,4 +12,5 @@ example/_site
 Gemfile.lock
 Gemfile
 node_modules
-npm-debug.log*
+npm-debug.log
+.claude/settings.json
