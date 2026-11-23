@@ -1,0 +1,14 @@
+{
+  "name": "mczerniawski-github-io",
+  "private": true,
+  "scripts": {
+    "build:js": "uglifyjs node_modules/jquery/dist/jquery.js assets/js/plugins/jquery.fitvids.js assets/js/plugins/jquery.greedy-navigation.js assets/js/plugins/jquery.magnific-popup.js assets/js/plugins/jquery.ba-throttle-debounce.js assets/js/plugins/smooth-scroll.js assets/js/plugins/gumshoe.js assets/js/_main.js -c -m --comments \"/^!|GreedyNav/\" -o assets/js/main.min.js && node -e \"const fs = require('fs'); const path = 'assets/js/main.min.js'; fs.writeFileSync(path, fs.readFileSync(path, 'utf8').replace(/[ \\t]+$/gm, ''))\"",
+    "build:search": "node -e \"const fs = require('fs'); for (const file of ['lunr.js', 'lunr.min.js']) fs.copyFileSync('node_modules/lunr/' + file, 'assets/js/lunr/' + file)\"",
+    "build": "npm run build:js && npm run build:search"
+  },
+  "devDependencies": {
+    "jquery": "3.8.0",
+    "lunr": "2.3.9",
+    "uglify-js": "3.19.3"
+  }
+}
