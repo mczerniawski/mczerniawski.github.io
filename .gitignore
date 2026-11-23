@@ -11,6 +11,21 @@ codekit-config.json
 example/_site
 Gemfile.lock
 Gemfile
-node_modules
+
 npm-debug.log
-.claude/settings.json
+
+# Dependencies
+node_modules/
+vendor/
+
+# Build output
+dist/
+build/
+coverage/
+
+# Logs
+*.log
+
+# Project secrets
+.env
+.env.*
